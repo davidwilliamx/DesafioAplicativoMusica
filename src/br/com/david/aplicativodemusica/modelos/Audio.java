@@ -1,11 +1,10 @@
-package br.com.david.aplicativodemusica;
+package br.com.david.aplicativodemusica.modelos;
 
 public class Audio {
     private String titulo;
-    private String artista;
     private int duracao;
     private int totalDeReproducoes;
-    private int curtidas;
+    private int totalDeCurtidas;
     private int classificacao;
 
     public String getTitulo() {
@@ -14,14 +13,6 @@ public class Audio {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getArtista() {
-        return artista;
-    }
-
-    public void setArtista(String artista) {
-        this.artista = artista;
     }
 
     public int getDuracao() {
@@ -40,12 +31,12 @@ public class Audio {
         this.totalDeReproducoes = totalDeReproducoes;
     }
 
-    public int getCurtidas() {
-        return curtidas;
+    public int getTotalDeCurtidas() {
+        return totalDeCurtidas;
     }
 
-    public void setCurtidas(int curtidas) {
-        this.curtidas = curtidas;
+    public void setTotalDeCurtidas(int totalDeCurtidas) {
+        this.totalDeCurtidas = totalDeCurtidas;
     }
 
     public int getClassificacao() {
@@ -57,7 +48,8 @@ public class Audio {
     }
 
     public void reproduzir() {
-        System.out.println("Reproduzindo " + this.titulo + " por " + this.artista);
+        System.out.println("Reproduzindo " + this.titulo);
+        this.totalDeReproducoes++;
     }
 
     public void pausar() {
@@ -69,7 +61,7 @@ public class Audio {
     }
 
     public void curtir() {
-        this.curtidas++;
+        System.out.println("Você curtiu " + this.titulo);
+        this.totalDeCurtidas++;
     }
-
 }
